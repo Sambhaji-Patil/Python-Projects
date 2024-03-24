@@ -362,6 +362,7 @@ while game_end!=True:
             if account1['name']==winner:
                 score=score+1
                 print(f"\nYou are right. Current score: {score}")
+                account1=get_random_account()
                 account2=get_random_account()
                 game(account1,account2)
             else: 
@@ -372,7 +373,7 @@ while game_end!=True:
             if account2['name']==winner:
                 score=score+1
                 print(f"\nYou are right. Current score: {score}")
-                account1=account2
+                account1=get_random_account()
                 account2=get_random_account()
                 game(account1,account2)
             else:
@@ -382,9 +383,16 @@ while game_end!=True:
 
     account1=get_random_account()
     account2=get_random_account()
+    #if both account1 and account2 are same than this logic gets a new account
+    while account1 == account2:
+      account2 = get_random_account()
     game(account1,account2)
 
     print("Game Over")
+    op = input("\nDo you want to play again? Type 'y' or 'n': ")
+    if op.lower() != 'y':
+        print("Thank you for playing")
+        game_end=True
     op = input("\nDo you want to play again? Type 'y' or 'n': ")
     if op.lower() != 'y':
         print("Thank you for playing")
