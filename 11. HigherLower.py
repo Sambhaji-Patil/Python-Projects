@@ -1,3 +1,7 @@
+""" you can put this logo,vs and data part into a seperate file and run by importing it in this main program
+    from art import logo,vs
+    from data import data
+"""
 logo = """
     __  ___       __             
    / / / (_)___ _/ /_  ___  _____
